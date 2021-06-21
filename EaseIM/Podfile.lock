@@ -1,0 +1,61 @@
+PODS:
+  - AgoraRtcEngine_iOS (3.4.2)
+  - EaseCallKit (3.8.1.1):
+    - AgoraRtcEngine_iOS
+    - HyphenateChat
+    - Masonry
+    - SDWebImage
+  - EaseIMKit (3.8.2):
+    - EMVoiceConvert (~> 0.1.0)
+    - HyphenateChat
+  - EMVoiceConvert (0.1.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HyphenateChat (3.8.2)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.6.1)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+
+DEPENDENCIES:
+  - AgoraRtcEngine_iOS
+  - EaseCallKit
+  - EaseIMKit (= 3.8.2)
+  - FMDB
+  - HyphenateChat (= 3.8.2)
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - AgoraRtcEngine_iOS
+    - EaseCallKit
+    - EaseIMKit
+    - EMVoiceConvert
+    - FMDB
+    - HyphenateChat
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  AgoraRtcEngine_iOS: 3a4d64f2866ffc122e090a693153bb673021f6fe
+  EaseCallKit: e7c3ed4608cf71674ac5aa49e98df190aa28309b
+  EaseIMKit: d6bb6a800c311a7b07fa88cfc6a262f5fda8cfa9
+  EMVoiceConvert: 32a0eaada94d93c151a5abd53ee174cd4e63b01f
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HyphenateChat: bc919bbc39c3837984c65c19fb26271473175689
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+
+PODFILE CHECKSUM: 36fc54abc990548bd0af1b14ab3705ce9469d11c
+
+COCOAPODS: 1.10.1
