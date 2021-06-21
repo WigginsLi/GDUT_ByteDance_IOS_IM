@@ -141,7 +141,7 @@
     //UITabBarItem *discoverItem = [self _setupTabBarItemWithTitle:@"发现" imgName:@"icon-tab发现unselected" selectedImgName:@"icon-tab发现" tag:kTabbarItemTag_Settings];
     
     self.mineController = [[EMMineViewController alloc] init];
-    UITabBarItem *mineItem = [self _setupTabBarItemWithTitle:@"我" imgName:@"icon-tab我unselected" selectedImgName:@"icon-tab我" tag:kTabbarItemTag_Settings];
+    UITabBarItem *mineItem = [self _setupTabBarItemWithTitle:@"我的" imgName:@"icon-tab我unselected" selectedImgName:@"icon-tab我" tag:kTabbarItemTag_Settings];
     self.mineController.tabBarItem = mineItem;
     [self addChildViewController:self.mineController];
     
