@@ -23,6 +23,7 @@
     //懒加载
     if(!_manager){
         _manager = [AFHTTPSessionManager manager];
+        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     return _manager;
 }
@@ -37,10 +38,8 @@
 
 -(void) sendBody:(NSDictionary*)body finishBlock:( void (^) (NSDictionary*))finish{
 //    __block NSDictionary* res ;
-
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self.manager POST:self.url parameters:body progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"成功");
             dispatch_async(dispatch_get_main_queue(), ^{
                 finish(responseObject);
             });
@@ -51,4 +50,12 @@
     });
     
 }
+
+
+- (void)senduserAccountCheckIfExists:(NSString *)account finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": account};
+    [self sendBody:body finishBlock:finish];
+}
+
+
 @end

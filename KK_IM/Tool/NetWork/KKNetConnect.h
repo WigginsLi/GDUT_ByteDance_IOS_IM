@@ -12,10 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KKNetConnect : NSObject
 #pragma mark -方法
 -(instancetype) initWithUrl:(NSString*)url;
--(void) sendBody:(NSDictionary*)body finishBlock:( void (^) (NSDictionary*))finish;
+
+//判断用户是否存在，
+//@pram userAccount 账号，finishBlock 获取返回结果后的操作。
+- (void)senduserAccountCheckIfExists:(NSString *)account finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
 
 #pragma mark -属性
-//@property (nonatomic, strong)NSDictionary* dict;
+
 
 @end
 
