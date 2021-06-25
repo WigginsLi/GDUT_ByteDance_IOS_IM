@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8454000D268602C4003229E9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454000C268602C4003229E9 /* LoginViewController.m */; };
 		8454FF7B268333F4003229E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF7A268333F4003229E9 /* AppDelegate.m */; };
 		8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF7D268333F4003229E9 /* SceneDelegate.m */; };
 		8454FF81268333F4003229E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF80268333F4003229E9 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8454000B268602C4003229E9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8454000C268602C4003229E9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8454FF76268333F4003229E9 /* KK_IM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KK_IM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454FF79268333F4003229E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8454FF7A268333F4003229E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 		8454FFB02683372A003229E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8454000B268602C4003229E9 /* LoginViewController.h */,
+				8454000C268602C4003229E9 /* LoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				8454FF7B268333F4003229E9 /* AppDelegate.m in Sources */,
 				8454FF8C268333FB003229E9 /* main.m in Sources */,
 				8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */,
+				8454000D268602C4003229E9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
