@@ -23,7 +23,10 @@
     //懒加载
     if(!_manager){
         _manager = [AFHTTPSessionManager manager];
+        //发送数据json解析
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        //返回数据json解析
+        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     return _manager;
 }
@@ -51,11 +54,22 @@
     
 }
 
+-(void) changURL:(NSString*)newURL{
+    self.url = newURL;
+}
 
 - (void)senduserAccountCheckIfExists:(NSString *)account finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
     NSDictionary* body = @{@"userId": account};
     [self sendBody:body finishBlock:finish];
 }
 
+- (void)senduserAccount:(NSString *)account andPassword:(NSString *)passWord finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": account,
+                           @"password": passWord
+    };
+    [self sendBody:body finishBlock:finish];
+
+}
 
 @end
+

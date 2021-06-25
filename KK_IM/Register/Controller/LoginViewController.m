@@ -36,12 +36,37 @@
 }
 
 - (void) login {
-    if (/*用接口判断用户是否存在 && 账号密码是否匹配*/ TRUE) {
-        NSLog(@"登录成功");
-        [self performSegueWithIdentifier:@"loginSegue" sender:self.usernameField];
-    }else {
-        NSLog(@"账号或密码不对");
-    }
+    //创建链接，指定相应URL
+    KKNetConnect* conn = [[KKNetConnect alloc]initWithUrl:@"https://qczgqv.fn.thelarkcloud.com/ifUserExist"];
+    //异步发送请求，成功后返回主线程执行finish函数
+    [conn senduserAccountCheckIfExists:self.usernameField.text finishBlock:^(NSDictionary * _Nonnull res) {
+        //JSON转成字典
+        NSDictionary* dictPraseFromRes = res;
+        //存在用户
+        if ([dictPraseFromRes[@"result"]  isEqual:  @(YES)]){
+            //去验证密码
+            [conn changURL:@"https://qczgqv.fn.thelarkcloud.com/MatchUserPassword"];
+            //发送请求
+            [conn senduserAccount:self.usernameField.text andPassword:self.passwordField.text finishBlock:^(NSDictionary * _Nonnull loginRes) {
+                NSDictionary* loginResDict = loginRes;
+                //成功匹配密码
+                if([loginResDict[@"result"] isEqual:@(YES) ]){
+                    //进入主页面
+                    [self performSegueWithIdentifier:@"loginSegue" sender:self.usernameField];
+                }else{
+                    //不匹配
+                    NSLog(@"账号密码不匹配！");
+                }
+                            
+            }];
+                
+            }else {
+                //不存在用户
+                NSLog(@"账号未注册！");
+                //跳转至注册页面
+                [self performSegueWithIdentifier:@"register" sender:self.usernameField];
+            }
+    }];
 }
 
 
