@@ -7,6 +7,8 @@
 
 #import "LoginViewController.h"
 
+#import "RegisterViewController.h"
+#import "MainPageViewController.h"
 #import "UserInfoModel.h"
 #import "infoArchive.h"
 
@@ -65,7 +67,7 @@
             //不存在用户
             NSLog(@"账号未注册！");
             //跳转至注册页面
-            [self performSegueWithIdentifier:@"register" sender:self.usernameField];
+            [self performSegueWithIdentifier:@"register" sender:nil];
         }
 }
 
@@ -87,10 +89,19 @@
         }];
         
         /*  TODO： 归档个人用户信息的数据  */
-        [self performSegueWithIdentifier:@"loginSegue" sender:self.usernameField];//传递个人信息需要？
+        [self performSegueWithIdentifier:@"loginSegue" sender:nil];
     }else{
         //不匹配
         NSLog(@"账号密码不匹配！");
+    }
+}
+
+// 将值通过segue传递
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"register"]) {
+        RegisterViewController *theVc = segue.destinationViewController;
+        theVc.username = self.usernameField.text;
+        theVc.password = self.passwordField.text;
     }
 }
 
