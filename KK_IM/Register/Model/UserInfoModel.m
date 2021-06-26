@@ -6,7 +6,7 @@
 //
 
 #import "UserInfoModel.h"
-#import <objc/runtime.h>
+
 
 @implementation UserInfoModel
 

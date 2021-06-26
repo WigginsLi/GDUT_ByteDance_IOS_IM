@@ -84,8 +84,7 @@
             infoArchive* archiver = [infoArchive new];
 
             [archiver archiveMyInfo:userInfo];
-
-            [archiver unarchiveMyInfo];
+            
         }];
         
         /*  TODO： 归档个人用户信息的数据  */
