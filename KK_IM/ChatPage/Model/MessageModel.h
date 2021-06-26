@@ -9,14 +9,14 @@
 #define MessageModel_h
 
 enum MessageType{
-    TEXT;
-    EMOJI;
-    PICTURE;
+    TEXT,
+    EMOJI,
+    PICTURE,
 }
 
 @interface MessageModel : NSObject
 
-@property (nonatomic, copy) MessageType type;
+@property (nonatomic, assign) enum MessageType type;
 @property (nonatomic, copy) NSString content;
 @property (nonatomic, copy) NSString sendTime;
 @property (nonatomic, copy) NSString senderId;

@@ -9,16 +9,16 @@
 #define ChatModel_h
 
 enum ChatType{
-    PRIVATE;
-    PUBLIC;
-}
+    PRIVATE,
+    PUBLIC,
+};
 
 @interface ChatModel : NSObject
 
-@property (nonatomic, copy) ChatType *type;
+@property (nonatomic, assign) enum ChatType *type;
 @property (nonatomic, copy) NSString *senderId;
 @property (nonatomic, copy) NSString *receiverId;
-@property (nonatomic, copy) NSArray *Messages;
+@property (nonatomic, copy) NSString *lastMessages;
 
 @end
 
