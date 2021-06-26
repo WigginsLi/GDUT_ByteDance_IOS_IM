@@ -7,19 +7,22 @@
 
 #ifndef ChatModel_h
 #define ChatModel_h
+#import <Foundation/Foundation.h>
 
-enum ChatType{
-    PRIVATE,
-    PUBLIC,
+typedef NS_ENUM(long, ChatType){
+    PRIVATE = 0,
+    PUBLIC = 1 << 0
 };
 
 @interface ChatModel : NSObject
 
-@property (nonatomic, assign) enum ChatType *type;
+@property (nonatomic, assign) ChatType type;
 @property (nonatomic, copy) NSString *senderId;
 @property (nonatomic, copy) NSString *receiverId;
 @property (nonatomic, copy) NSString *lastMessages;
 
+#pragma mark -方法
+-(instancetype) initWithDict:(NSDictionary* )dict;
 @end
 
 #endif /* ChatModel_h */

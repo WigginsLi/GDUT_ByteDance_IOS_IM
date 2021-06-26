@@ -9,6 +9,9 @@
 
 #import "ChatModel.h"
 
+#import "KKNetConnect+messege.h"
+#import "infoArchive.h"
+
 @interface MainPageViewController () <UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
@@ -26,13 +29,10 @@
     return _chatList;
 }
 
-- (void) addChatInfoWithChat: (ChatModel *)chatInfo{
-    // TODO: 将聊天信息模型传进来并插入chatList数组
-    
-//    [self.chatList addObject: chatInfo];
+//- (void) addChatInfoWithChat: (ChatModel *)chatInfo{
 //
 //    [self.chatTableView reloadData];
-}
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,11 +40,32 @@
     
     self.chatTableView.dataSource = self;
     NSLog(@"主界面");
+    [self reloadHistory];
+
+}
+
+#pragma mark -加载历史信息
+-(void) reloadHistory{
+    KKNetConnect* conn = [[KKNetConnect alloc]initWithUrl:@"https://qcxr62.fn.thelarkcloud.com/getChatList"];
     
-//    ChatModel* chatmodel = [[ChatModel alloc] init];
-//    chatmodel.senderId = @"00002";
-//    chatmodel.lastMessages = @"this is a test message.";
-//    [self.chatList addObject: chatmodel];
+    infoArchive* unarchiver = [[infoArchive alloc]init];
+    UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
+    
+    
+    [conn getMessegeList:myInfo.userId finishBlock:^(NSDictionary * _Nonnull dict) {
+        
+        NSLog(@"%@",dict[@"resultList"]);
+        
+        NSArray* tempArr = dict[@"resultList"];
+        
+        for (NSArray* d in tempArr) {
+            ChatModel* chatmodel = [[ChatModel alloc]initWithDict:d[0]];
+            
+            [self.chatList addObject:chatmodel];
+        }
+        //刷新界面
+        [self.chatTableView reloadData];
+    }];
 }
 
 // 每个cell的内容

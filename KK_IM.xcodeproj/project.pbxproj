@@ -23,6 +23,8 @@
 		8454FF8C268333FB003229E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF8B268333FB003229E9 /* main.m */; };
 		8454FF96268333FB003229E9 /* KK_IMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF95268333FB003229E9 /* KK_IMTests.m */; };
 		8454FFA1268333FB003229E9 /* KK_IMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FFA0268333FB003229E9 /* KK_IMUITests.m */; };
+		84B97F2C268780F500C05F62 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B97F2B268780F500C05F62 /* ChatModel.m */; };
+		84B97F2F268784CF00C05F62 /* KKNetConnect+messege.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B97F2E268784CF00C05F62 /* KKNetConnect+messege.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		8454FFB226833C93003229E9 /* UserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
 		8454FFB8268354BA003229E9 /* ChatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
 		8454FFBD268359D3003229E9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		84B97F2B268780F500C05F62 /* ChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
+		84B97F2D268784CF00C05F62 /* KKNetConnect+messege.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKNetConnect+messege.h"; sourceTree = "<group>"; };
+		84B97F2E268784CF00C05F62 /* KKNetConnect+messege.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KKNetConnect+messege.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,8 @@
 			children = (
 				844A30922685893D004446F9 /* KKNetConnect.h */,
 				844A30932685893E004446F9 /* KKNetConnect.m */,
+				84B97F2D268784CF00C05F62 /* KKNetConnect+messege.h */,
+				84B97F2E268784CF00C05F62 /* KKNetConnect+messege.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -231,8 +238,8 @@
 		8454FFAF26833716003229E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8454001626874D01003229E9 /* UserInfoModel.m */,
 				8454FFB226833C93003229E9 /* UserInfoModel.h */,
+				8454001626874D01003229E9 /* UserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				8454FFB8268354BA003229E9 /* ChatModel.h */,
+				84B97F2B268780F500C05F62 /* ChatModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B97F2F268784CF00C05F62 /* KKNetConnect+messege.m in Sources */,
 				8454002426875C73003229E9 /* MainPageViewController.m in Sources */,
 				8454001526874CCB003229E9 /* infoArchive.m in Sources */,
 				844A30942685893E004446F9 /* KKNetConnect.m in Sources */,
@@ -453,6 +462,7 @@
 				8454FF7B268333F4003229E9 /* AppDelegate.m in Sources */,
 				8454001A26874E2F003229E9 /* RegisterViewController.m in Sources */,
 				8454FF8C268333FB003229E9 /* main.m in Sources */,
+				84B97F2C268780F500C05F62 /* ChatModel.m in Sources */,
 				8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */,
 				8454001726874D01003229E9 /* UserInfoModel.m in Sources */,
 				8454000D268602C4003229E9 /* LoginViewController.m in Sources */,
