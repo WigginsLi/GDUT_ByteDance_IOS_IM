@@ -8,15 +8,18 @@
 #ifndef UserInfoModel_h
 #define UserInfoModel_h
 
-@interface UserInfoModel : NSObject
+#import <Foundation/Foundation.h>
+
+@interface UserInfoModel : NSObject<NSSecureCoding>
 
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *nickName;
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *deviceToken;
-@property (nonatomic, copy) NSArray *friends;
+@property (nonatomic, strong) NSMutableArray *friends;
 
+-(instancetype) initWithDict:(NSDictionary* )dict;
 @end
 
 #endif /* UserInfoModel_h */

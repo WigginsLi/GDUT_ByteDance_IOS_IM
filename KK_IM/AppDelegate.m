@@ -19,7 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-
+//    KKNetConnect* conn = [[KKNetConnect alloc]initWithUrl:@"https://qczgqv.fn.thelarkcloud.com/AddUser"];
+//    [conn senduserNickName:@"haha" andUserId:@"00004" andPassword:@"00004" finishBlock:^(NSDictionary * _Nonnull res) {
+//        NSLog(@"%@", res);
+//    }];
+    
+    
     return YES;
 }
 

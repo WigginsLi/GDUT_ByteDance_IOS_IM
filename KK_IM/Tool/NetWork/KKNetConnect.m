@@ -68,8 +68,32 @@
                            @"password": passWord
     };
     [self sendBody:body finishBlock:finish];
-
 }
+
+-(void) senduserNickName:(NSString*)nickName andUserId:(NSString*)userId andPassword:(NSString*)passWord finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"nickName": nickName,
+                           @"userId": userId,
+                           @"password": passWord
+    };
+    
+    [self sendBody:body finishBlock:finish];
+}
+
+- (void)getUserInfoForUserId:(NSString *)userId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": userId};
+    [self sendBody:body finishBlock:finish];
+    
+}
+
+//- (void)sendFriendId:(NSString *)friendAccount finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+//
+//
+//
+//    NSDictionary* body = @{@"userId": friendAccount};
+//
+//}
+
+
 
 @end
 
