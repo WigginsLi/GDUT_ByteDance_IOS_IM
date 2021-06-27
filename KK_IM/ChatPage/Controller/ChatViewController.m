@@ -36,6 +36,11 @@
     NSLog(@"和%@的聊天界面", self.oppositeUserId);
     
     [self reloadHistory];
+    // 定义一个定时器，约定多少时间循环调用self的run方法
+    NSTimer *timer = [NSTimer timerWithTimeInterval:30.0 target:self selector:@selector(reloadHistory) userInfo:nil repeats:YES];
+
+    // 将定时器添加到当前RunLoop的NSDefaultRunLoopMode下
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
 }
 
@@ -50,7 +55,7 @@
     [self.messageList removeAllObjects];
     [conn getMessegeDetailList:myInfo.userId withFriendId:self.oppositeUserId finishBlock:^(NSDictionary * _Nonnull dict) {
         
-        NSLog(@"%@",dict[@"resultList"]);
+//        NSLog(@"%@",dict[@"resultList"]);
         
         NSArray* tempArr = dict[@"resultList"];
         
@@ -65,9 +70,7 @@
 }
 
 // 每个cell的内容
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    NSLog(@"第%ld个cell", indexPath.row);
-    
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {    
     static NSString* leftCellId = @"LeftMessageCell";
     static NSString* rightCellId = @"RightMessageCell";
     

@@ -58,7 +58,7 @@
     [self.chatList  removeAllObjects];
     [conn getMessegeList:myInfo.userId finishBlock:^(NSDictionary * _Nonnull dict) {
         
-        NSLog(@"%@",dict[@"resultList"]);
+//        NSLog(@"%@",dict[@"resultList"]);
         
         NSArray* tempArr = dict[@"resultList"];
         
