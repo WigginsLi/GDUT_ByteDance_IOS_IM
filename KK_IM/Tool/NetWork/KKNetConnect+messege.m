@@ -11,7 +11,7 @@
 
 - (void)getMessegeList:(NSString *)userId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
     NSDictionary* body = @{@"userId": userId};
-    
+    [self changURL:@"https://qcxr62.fn.thelarkcloud.com/getChatList"];
     [self sendBody:body finishBlock:finish];
 }
 @end

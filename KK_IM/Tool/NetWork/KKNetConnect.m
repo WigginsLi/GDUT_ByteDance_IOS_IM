@@ -60,6 +60,7 @@
 
 - (void)senduserAccountCheckIfExists:(NSString *)account finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
     NSDictionary* body = @{@"userId": account};
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/ifUserExist";
     [self sendBody:body finishBlock:finish];
 }
 
@@ -67,6 +68,7 @@
     NSDictionary* body = @{@"userId": account,
                            @"password": passWord
     };
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/MatchUserPassword";
     [self sendBody:body finishBlock:finish];
 }
 
@@ -75,25 +77,30 @@
                            @"userId": userId,
                            @"password": passWord
     };
-    
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/AddUser";
     [self sendBody:body finishBlock:finish];
 }
 
 - (void)getUserInfoForUserId:(NSString *)userId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
     NSDictionary* body = @{@"userId": userId};
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/getUserInfo";
     [self sendBody:body finishBlock:finish];
     
 }
 
-//- (void)sendFriendId:(NSString *)friendAccount finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
-//
-//
-//
-//    NSDictionary* body = @{@"userId": friendAccount};
-//
-//}
+- (void)addFriendId:(NSString *)friendAccount andMyUserId:(NSString*)myUserId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": myUserId,
+                           @"friendId": friendAccount
+    };
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/userAddFriend";
+    [self sendBody:body finishBlock:finish];
+}
 
-
-
+- (void)deleteFriendId:(NSString *)friendAccount andMyUserId:(NSString *)myUserId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": myUserId,
+                           @"friendId": friendAccount
+    };
+    self.url = @"https://qczgqv.fn.thelarkcloud.com/userDeleteFriend";
+    [self sendBody:body finishBlock:finish];
+}
 @end
-

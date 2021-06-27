@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		222CBB4F9862638C77FD146B /* libPods-KK_IM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C6C5BCDFAC9F53C08ED4F8 /* libPods-KK_IM.a */; };
+		842B976C2688523400B43B8A /* settingArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B976B2688523400B43B8A /* settingArchive.m */; };
 		844A30942685893E004446F9 /* KKNetConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A30932685893E004446F9 /* KKNetConnect.m */; };
 		8454000D268602C4003229E9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454000C268602C4003229E9 /* LoginViewController.m */; };
 		8454001526874CCB003229E9 /* infoArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454001426874CCA003229E9 /* infoArchive.m */; };
@@ -48,6 +49,8 @@
 		3D637AA4266C0C47FA9C65D4 /* Pods-KK_IM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KK_IM.debug.xcconfig"; path = "Target Support Files/Pods-KK_IM/Pods-KK_IM.debug.xcconfig"; sourceTree = "<group>"; };
 		4B4487C3145CA49EE6727197 /* Pods-KK_IM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KK_IM.release.xcconfig"; path = "Target Support Files/Pods-KK_IM/Pods-KK_IM.release.xcconfig"; sourceTree = "<group>"; };
 		62C6C5BCDFAC9F53C08ED4F8 /* libPods-KK_IM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KK_IM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		842B976A2688523400B43B8A /* settingArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = settingArchive.h; sourceTree = "<group>"; };
+		842B976B2688523400B43B8A /* settingArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = settingArchive.m; sourceTree = "<group>"; };
 		844A30922685893D004446F9 /* KKNetConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNetConnect.h; sourceTree = "<group>"; };
 		844A30932685893E004446F9 /* KKNetConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNetConnect.m; sourceTree = "<group>"; };
 		8454000B268602C4003229E9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -122,7 +125,7 @@
 		844A309026858921004446F9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				8454001226874CCA003229E9 /* InfoArchive */,
+				8454001226874CCA003229E9 /* Archive */,
 				844A309126858927004446F9 /* NetWork */,
 			);
 			path = Tool;
@@ -139,13 +142,15 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		8454001226874CCA003229E9 /* InfoArchive */ = {
+		8454001226874CCA003229E9 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
 				8454001326874CCA003229E9 /* infoArchive.h */,
 				8454001426874CCA003229E9 /* infoArchive.m */,
+				842B976A2688523400B43B8A /* settingArchive.h */,
+				842B976B2688523400B43B8A /* settingArchive.m */,
 			);
-			path = InfoArchive;
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		8454002026875C2F003229E9 /* Controller */ = {
@@ -466,6 +471,7 @@
 				8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */,
 				8454001726874D01003229E9 /* UserInfoModel.m in Sources */,
 				8454000D268602C4003229E9 /* LoginViewController.m in Sources */,
+				842B976C2688523400B43B8A /* settingArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

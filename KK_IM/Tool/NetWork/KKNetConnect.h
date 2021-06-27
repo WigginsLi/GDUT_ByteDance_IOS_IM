@@ -33,8 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 //获取用户信息
 -(void) getUserInfoForUserId:(NSString*)userId finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
 
-//添加好友的请求
--(void) sendFriendId:(NSString*)friendAccount finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
+//添加好友
+- (void)addFriendId:(NSString *)friendAccount andMyUserId:(NSString*)myUserId finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
+
+//删除好友
+- (void)deleteFriendId:(NSString *)friendAccount andMyUserId:(NSString*)myUserId finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
+
 
 #pragma mark -属性
 
