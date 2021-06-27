@@ -6,6 +6,7 @@
 //
 
 #import "MainPageViewController.h"
+#import "ChatViewController.h"
 
 #import "ChatModel.h"
 
@@ -29,11 +30,6 @@
     return _chatList;
 }
 
-//- (void) addChatInfoWithChat: (ChatModel *)chatInfo{
-//
-//    [self.chatTableView reloadData];
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,13 +37,13 @@
     self.chatTableView.dataSource = self;
     NSLog(@"主界面");
     
-    // 定义一个定时器，约定两秒之后调用self的run方法
-    NSTimer *timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(reloadHistory) userInfo:nil repeats:YES];
+    [self reloadHistory];
+    // 定义一个定时器，约定多少时间循环调用self的run方法
+    NSTimer *timer = [NSTimer timerWithTimeInterval:30.0 target:self selector:@selector(reloadHistory) userInfo:nil repeats:YES];
 
     // 将定时器添加到当前RunLoop的NSDefaultRunLoopMode下
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
-//    [self reloadHistory];
 
 }
 
@@ -76,6 +72,20 @@
     }];
 }
 
+- (NSString *) getOppositeIdwith:(NSInteger)indexPath {
+    infoArchive* unarchiver = [[infoArchive alloc]init];
+    UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
+    
+    NSString* oppositeUserId;
+    if (myInfo.userId == [self.chatList[indexPath] senderId]) {
+        oppositeUserId =[self.chatList[indexPath] receiverId];
+    }else {
+        oppositeUserId =[self.chatList[indexPath] senderId];
+    }
+    
+    return oppositeUserId;
+}
+
 // 每个cell的内容
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     static NSString* cellid = @"chatCell";
@@ -83,16 +93,7 @@
     // 从缓存池中找
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellid];
     
-    infoArchive* unarchiver = [[infoArchive alloc]init];
-    UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
-    
-    NSString* oppositeUserId;
-    if (myInfo.userId == [self.chatList[indexPath.row] senderId]) {
-        oppositeUserId =[self.chatList[indexPath.row] receiverId];
-    }else {
-        oppositeUserId =[self.chatList[indexPath.row] senderId];
-    }
-    
+    NSString* oppositeUserId = [self getOppositeIdwith:indexPath.row];
     int64_t unreadCount = [self.chatList[indexPath.row] unreadCount];
     
     cell.textLabel.text = [NSString stringWithFormat:@"对方的昵称[%@]", oppositeUserId];
@@ -105,6 +106,17 @@
 // 单组table有多少行
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.chatList.count;
+}
+
+// 将值通过segue传递
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"MessageSugue"]) {
+        // TODO: 跳转的时候为啥不走这个函数?-_-|| 后记: 莫名其妙又ok了
+        ChatViewController *theVc = segue.destinationViewController;
+        NSInteger selectedIndex = [[self.chatTableView indexPathForSelectedRow] row];
+        NSLog(@"%ld", (long)selectedIndex);
+        theVc.oppositeUserId = [self getOppositeIdwith:selectedIndex];
+    }
 }
 
 @end

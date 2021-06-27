@@ -14,6 +14,8 @@
 		8454001726874D01003229E9 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454001626874D01003229E9 /* UserInfoModel.m */; };
 		8454001A26874E2F003229E9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454001926874E2F003229E9 /* RegisterViewController.m */; };
 		8454002426875C73003229E9 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454002326875C73003229E9 /* MainPageViewController.m */; };
+		84540028268847A9003229E9 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84540027268847A9003229E9 /* ChatViewController.m */; };
+		8454002A26884B9F003229E9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454002926884B9F003229E9 /* MessageModel.m */; };
 		8454FF7B268333F4003229E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF7A268333F4003229E9 /* AppDelegate.m */; };
 		8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF7D268333F4003229E9 /* SceneDelegate.m */; };
 		8454FF81268333F4003229E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454FF80268333F4003229E9 /* ViewController.m */; };
@@ -59,6 +61,9 @@
 		8454001926874E2F003229E9 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		8454002226875C73003229E9 /* MainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		8454002326875C73003229E9 /* MainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
+		84540026268847A9003229E9 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		84540027268847A9003229E9 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		8454002926884B9F003229E9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		8454FF76268333F4003229E9 /* KK_IM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KK_IM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454FF79268333F4003229E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8454FF7A268333F4003229E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +156,8 @@
 		8454002026875C2F003229E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84540026268847A9003229E9 /* ChatViewController.h */,
+				84540027268847A9003229E9 /* ChatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				8454FFBD268359D3003229E9 /* MessageModel.h */,
+				8454002926884B9F003229E9 /* MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84540028268847A9003229E9 /* ChatViewController.m in Sources */,
 				84B97F2F268784CF00C05F62 /* KKNetConnect+messege.m in Sources */,
 				8454002426875C73003229E9 /* MainPageViewController.m in Sources */,
 				8454001526874CCB003229E9 /* infoArchive.m in Sources */,
@@ -466,6 +475,7 @@
 				8454FF7E268333F4003229E9 /* SceneDelegate.m in Sources */,
 				8454001726874D01003229E9 /* UserInfoModel.m in Sources */,
 				8454000D268602C4003229E9 /* LoginViewController.m in Sources */,
+				8454002A26884B9F003229E9 /* MessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

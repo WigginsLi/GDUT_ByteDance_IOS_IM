@@ -14,4 +14,10 @@
     
     [self sendBody:body finishBlock:finish];
 }
+
+-(void) getMessegeDetailList:(NSString*)userId withFriendId:(NSString*)friendId finishBlock:(void (^)(NSDictionary * _Nonnull))finish{
+    NSDictionary* body = @{@"userId": userId, @"friendId": friendId};
+    
+    [self sendBody:body finishBlock:finish];
+}
 @end
