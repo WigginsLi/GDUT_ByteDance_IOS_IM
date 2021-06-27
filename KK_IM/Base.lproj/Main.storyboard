@@ -155,6 +155,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="JgR-pd-1OO" kind="show" id="V9y-94-oON"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -167,7 +170,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatTableView" destination="lIa-Ip-n8A" id="OwK-9j-DzU"/>
-                        <segue destination="JgR-pd-1OO" kind="show" id="mhU-y6-FdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldp-N8-wRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

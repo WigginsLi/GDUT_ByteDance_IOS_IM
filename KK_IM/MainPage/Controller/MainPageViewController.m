@@ -40,7 +40,14 @@
     
     self.chatTableView.dataSource = self;
     NSLog(@"主界面");
-    [self reloadHistory];
+    
+    // 定义一个定时器，约定两秒之后调用self的run方法
+    NSTimer *timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(reloadHistory) userInfo:nil repeats:YES];
+
+    // 将定时器添加到当前RunLoop的NSDefaultRunLoopMode下
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    
+//    [self reloadHistory];
 
 }
 
@@ -51,7 +58,8 @@
     infoArchive* unarchiver = [[infoArchive alloc]init];
     UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
     
-    
+    NSLog(@"刷新消息列表");
+    [self.chatList  removeAllObjects];
     [conn getMessegeList:myInfo.userId finishBlock:^(NSDictionary * _Nonnull dict) {
         
         NSLog(@"%@",dict[@"resultList"]);
@@ -75,8 +83,21 @@
     // 从缓存池中找
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellid];
     
-    cell.textLabel.text = [self.chatList[indexPath.row] senderId];
-    cell.detailTextLabel.text = [self.chatList[indexPath.row] lastMessages];
+    infoArchive* unarchiver = [[infoArchive alloc]init];
+    UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
+    
+    NSString* oppositeUserId;
+    if (myInfo.userId == [self.chatList[indexPath.row] senderId]) {
+        oppositeUserId =[self.chatList[indexPath.row] receiverId];
+    }else {
+        oppositeUserId =[self.chatList[indexPath.row] senderId];
+    }
+    
+    int64_t unreadCount = [self.chatList[indexPath.row] unreadCount];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"对方的昵称[%@]", oppositeUserId];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"[有%lld条未读消息]%@", unreadCount, [self.chatList[indexPath.row] lastMessages]];
     
     return cell;
 }

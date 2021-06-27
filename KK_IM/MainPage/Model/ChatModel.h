@@ -20,6 +20,7 @@ typedef NS_ENUM(long, ChatType){
 @property (nonatomic, copy) NSString *senderId;
 @property (nonatomic, copy) NSString *receiverId;
 @property (nonatomic, copy) NSString *lastMessages;
+@property (nonatomic, assign) NSInteger unreadCount;
 
 #pragma mark -方法
 -(instancetype) initWithDict:(NSDictionary* )dict;
