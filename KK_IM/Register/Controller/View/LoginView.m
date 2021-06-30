@@ -68,28 +68,28 @@
         make.top.equalTo(self.backView.mas_top).offset(96);
     }];
 
-    self.nameField.keyboardType = UIKeyboardTypeNumberPad;
-    self.nameField.keyboardAppearance = UIKeyboardAppearanceDefault;
-    self.nameField = [[UITextField alloc] init];
-    self.nameField.backgroundColor = [UIColor whiteColor];
-    self.nameField.delegate = self;
+    self.usernameField.keyboardType = UIKeyboardTypeNumberPad;
+    self.usernameField.keyboardAppearance = UIKeyboardAppearanceDefault;
+    self.usernameField = [[UITextField alloc] init];
+    self.usernameField.backgroundColor = [UIColor whiteColor];
+    self.usernameField.delegate = self;
     // 边框样式
-    self.nameField.borderStyle = UITextBorderStyleNone;
-    self.nameField.placeholder = @"🆔";
-    self.nameField.returnKeyType = UIReturnKeyGo;
-    self.nameField.font = [UIFont systemFontOfSize:17];
-    self.nameField.rightViewMode = UITextFieldViewModeWhileEditing;
+    self.usernameField.borderStyle = UITextBorderStyleNone;
+    self.usernameField.placeholder = @"🆔";
+    self.usernameField.returnKeyType = UIReturnKeyGo;
+    self.usernameField.font = [UIFont systemFontOfSize:17];
+    self.usernameField.rightViewMode = UITextFieldViewModeWhileEditing;
     // 右边的一键删除button
-    self.nameField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.nameField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 18, 10)];
-    self.nameField.leftViewMode = UITextFieldViewModeAlways;
-    self.nameField.layer.cornerRadius = 25;
-    self.nameField.layer.borderWidth = 1;
-    self.nameField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.usernameField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 18, 10)];
+    self.usernameField.leftViewMode = UITextFieldViewModeAlways;
+    self.usernameField.layer.cornerRadius = 25;
+    self.usernameField.layer.borderWidth = 1;
+    self.usernameField.layer.borderColor = [UIColor lightGrayColor].CGColor;
 
 
-    [self.backView addSubview:self.nameField];
-    [self.nameField mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.backView addSubview:self.usernameField];
+    [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.backView).offset(30);
         make.right.equalTo(self.backView).offset(-30);
         make.top.equalTo(self.titleLable.mas_bottom).offset(40);
@@ -117,7 +117,7 @@
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.backView).offset(30);
         make.right.equalTo(self.backView).offset(-30);
-        make.top.equalTo(self.nameField.mas_bottom).offset(20);
+        make.top.equalTo(self.usernameField.mas_bottom).offset(20);
         make.height.equalTo(@55);
     }];
 
@@ -144,7 +144,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if([self.nameField isFirstResponder]){
+    if([self.usernameField isFirstResponder]){
         [self.passwordField becomeFirstResponder];
     }
     else if([self.passwordField isFirstResponder]){
