@@ -15,12 +15,27 @@
 @interface ChatViewController () <UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *messageTableView;
 @property (strong, nonatomic) NSMutableArray* messageList;
+- (IBAction)sendMessageBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *otherName;
 
 @end
 
 @implementation ChatViewController
 
 // 懒加载
+- (IBAction)sendMessageBtn:(id)sender {
+    KKNetConnect* conn = [[KKNetConnect alloc]init];
+    infoArchive* unarchiver = [[infoArchive alloc]init];
+    UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
+    [conn changURL:@"https://qcxr62.fn.thelarkcloud.com/sendMessage"];
+    [conn sendMessege:myInfo.userId withFriendId:self.oppositeUserId withContent:self.otherName.text finishBlock:^(NSDictionary * _Nonnull d) {
+            NSLog(@"%@",d);
+        [self reloadHistory];
+        [self.messageTableView reloadData];
+    }];
+    
+}
+
 - (NSMutableArray *) messageList {
     if (!_messageList) {
         _messageList = [NSMutableArray array];

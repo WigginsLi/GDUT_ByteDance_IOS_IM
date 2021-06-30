@@ -84,11 +84,12 @@
             infoArchive* archiver = [infoArchive new];
 
             [archiver archiveMyInfo:userInfo];
-            
+            NSLog(@"%@", userInfo);
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }];
         
         /*  TODO： 归档个人用户信息的数据  */
-        [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+        
     }else{
         //不匹配
         NSLog(@"账号密码不匹配！");

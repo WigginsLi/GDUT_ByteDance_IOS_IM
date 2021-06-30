@@ -16,14 +16,15 @@
         self.senderId = dict[@"senderId"];
         self.content = dict[@"content"];
         self.sendTime = dict[@"updatedAt"];
-        NSInteger type = [dict[@"type"] longValue];
-        if(type == 0){
-            self.type = TEXT;
-        }else if (type == 1){
-            self.type = EMOJI;
-        }else {
-            self.type = PICTURE;
-        }
+//        NSInteger type = [dict[@"type"] longValue];
+//        if(type == 0){
+//            self.type = TEXT;
+//        }else if (type == 1){
+//            self.type = EMOJI;
+//        }else {
+//            self.type = PICTURE;
+//        }
+        self.type = TEXT;
     }
     return self;
 }

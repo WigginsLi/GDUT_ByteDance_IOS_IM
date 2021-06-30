@@ -15,12 +15,13 @@
         self.receiverId = dict[@"receiverId"];
         self.senderId = dict[@"senderId"];
         self.lastMessages = dict[@"content"];
-        self.unreadCount = [dict[@"unreadCount"] longValue];
-        if(dict[@"type"] == 0){
-            self.type = PRIVATE;
-        }else{
-            self.type = PUBLIC;
-        }
+//        self.unreadCount = [dict[@"unreadCount"] longValue];
+//        if(dict[@"type"] == 0){
+//            self.type = PRIVATE;
+//        }else{
+//            self.type = PUBLIC;
+//        }
+        self.type = PRIVATE;
     }
     return self;
 }

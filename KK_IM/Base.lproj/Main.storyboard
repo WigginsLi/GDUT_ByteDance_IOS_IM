@@ -261,6 +261,9 @@
                                 <rect key="frame" x="356" y="661" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="发送"/>
+                                <connections>
+                                    <action selector="sendMessageBtn:" destination="JgR-pd-1OO" eventType="touchUpInside" id="HR2-Nk-LUF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mg7-s8-NyE"/>
@@ -269,6 +272,7 @@
                     <navigationItem key="navigationItem" title="对方名字" id="NVZ-53-Rgz"/>
                     <connections>
                         <outlet property="messageTableView" destination="pQI-WU-xeT" id="c5C-hQ-nXy"/>
+                        <outlet property="otherName" destination="bpH-zA-pAs" id="chR-oE-C2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYh-NZ-fyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

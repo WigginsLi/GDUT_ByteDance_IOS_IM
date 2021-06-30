@@ -54,11 +54,12 @@
     infoArchive* unarchiver = [[infoArchive alloc]init];
     UserInfoModel* myInfo = [unarchiver unarchiveMyInfo];
     
-    NSLog(@"刷新消息列表");
+    
     [self.chatList  removeAllObjects];
+    NSLog(@"刷新消息列表");
     [conn getMessegeList:myInfo.userId finishBlock:^(NSDictionary * _Nonnull dict) {
         
-//        NSLog(@"%@",dict[@"resultList"]);
+        NSLog(@"%@",dict);
         
         NSArray* tempArr = dict[@"resultList"];
         

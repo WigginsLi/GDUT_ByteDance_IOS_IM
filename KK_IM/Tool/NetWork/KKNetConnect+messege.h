@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) getMessegeDetailList:(NSString*)userId withFriendId:(NSString*)friendId finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
 
+-(void) sendMessege:(NSString*)userId withFriendId:(NSString*)friendId withContent:(NSString*)content finishBlock:(void (^)(NSDictionary * _Nonnull))finish;
+
 @end
 
 NS_ASSUME_NONNULL_END
