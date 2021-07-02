@@ -6,12 +6,12 @@
 //
 
 #import "RegisterViewController.h"
+#import "RegisterView.h"
+#import "Masonry.h"
 
 @interface RegisterViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *usernameField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordField;
-@property (strong, nonatomic) IBOutlet UIButton *registerButton;
 
+@property (nonatomic,strong) RegisterView* registerView;
 
 @end
 
@@ -19,21 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.usernameField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
-    [self.passwordField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
-    [self.registerButton addTarget:self action:@selector(registe) forControlEvents:UIControlEventTouchUpInside];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    self.usernameField.text = self.username;
-    self.passwordField.text = self.password;
+    self.registerView = [[RegisterView alloc]init];
+    
+    
+    [self.view addSubview:self.registerView];
+    [self.registerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    // Do any additional setup after loading the view.
+    [self.registerView.usernameField addTarget:self.registerView action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [self.registerView.passwordField addTarget:self.registerView action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [self.registerView.registerButton addTarget:self.registerView action:@selector(registe) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 // 文本框变化时执行, 判断账号密码是否都存在
 - (void) textChange {
-    if (self.usernameField.text.length > 0 && self.passwordField.text.length > 0) {
-        self.registerButton.enabled = YES;
+    if (self.registerView.usernameField.text.length > 0 && self.registerView.passwordField.text.length > 0) {
+        self.registerView.registerButton.enabled = YES;
     }else {
-        self.registerButton.enabled = NO;
+        self.registerView.registerButton.enabled = NO;
     }
 }
 

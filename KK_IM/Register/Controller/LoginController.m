@@ -17,7 +17,7 @@
 #import "AppDelegate.h"
 
 
-@interface LoginController ()
+@interface LoginController () <UITextFieldDelegate>
 @property (strong, nonatomic) LoginView* loginView;
 
 @end
@@ -57,6 +57,8 @@
     }
 }
 
+
+
 - (void) login {
     //创建链接，指定相应URL
     KKNetConnect* conn = [[KKNetConnect alloc]initWithUrl:@"https://qczgqv.fn.thelarkcloud.com/ifUserExist"];
@@ -82,8 +84,26 @@
         }else {
             //不存在用户
             NSLog(@"账号未注册！");
-            //跳转至注册页面
-            //[self performSegueWithIdentifier:@"register" sender:nil];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"该账号未注册，你要注册该账号吗？" preferredStyle:UIAlertControllerStyleAlert];
+            
+            
+            
+            
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //跳转至注册页面
+                AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+                [appDelegate.navigationController pushViewController:[[RegisterViewController alloc]init] animated:YES];
+                //[self performSegueWithIdentifier:@"register" sender:nil];
+            }];
+            [alertController addAction:okAction];
+            
+            // 即便“取消”Style后添加，还是默认出现在左边
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:cancelAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
         }
 }
 
@@ -92,9 +112,11 @@
     //成功匹配密码
     if([loginRes[@"result"] isEqual:@(YES) ]){
         NSLog(@"密码正确！");
+        
         MainTabBarController* mainTabBarController = [[MainTabBarController alloc]init];
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [appDelegate.navigationController pushViewController:mainTabBarController animated:YES];
+        
         //进入主页面之前，获取个人信息并归档。
         [conn changURL:@"https://qczgqv.fn.thelarkcloud.com/getUserInfo"];
         [conn getUserInfoForUserId:self.loginView.usernameField.text finishBlock:^(NSDictionary * _Nonnull userInfo) {
@@ -128,5 +150,7 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
+
+
 
 @end

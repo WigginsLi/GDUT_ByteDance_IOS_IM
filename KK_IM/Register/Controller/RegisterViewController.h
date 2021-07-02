@@ -11,8 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RegisterViewController : UIViewController
 
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
+
 
 @end
 

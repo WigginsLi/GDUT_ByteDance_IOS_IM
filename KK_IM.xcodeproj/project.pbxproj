@@ -455,6 +455,7 @@
 		84ECA273268C705A00A36EF3 /* KKNetConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA26D268C705A00A36EF3 /* KKNetConnect.m */; };
 		84ECA274268C705A00A36EF3 /* infoArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA271268C705A00A36EF3 /* infoArchive.m */; };
 		84ECA278268C70A300A36EF3 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA277268C70A300A36EF3 /* LoginView.m */; };
+		84ECA27B268F48D200A36EF3 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA27A268F48D200A36EF3 /* RegisterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1024,6 +1025,8 @@
 		84ECA271268C705A00A36EF3 /* infoArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoArchive.m; sourceTree = "<group>"; };
 		84ECA276268C70A300A36EF3 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		84ECA277268C70A300A36EF3 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		84ECA279268F48D200A36EF3 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		84ECA27A268F48D200A36EF3 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1807,10 +1810,10 @@
 				84ECA275268C706900A36EF3 /* View */,
 				84ECA25C268C6F2C00A36EF3 /* LoginController.m */,
 				84ECA25D268C6F2C00A36EF3 /* MainPageViewController.m */,
+				84ECA261268C6F2C00A36EF3 /* RegisterViewController.h */,
 				84ECA25E268C6F2C00A36EF3 /* RegisterViewController.m */,
 				84ECA25F268C6F2C00A36EF3 /* MainPageViewController.h */,
 				84ECA260268C6F2C00A36EF3 /* LoginController.h */,
-				84ECA261268C6F2C00A36EF3 /* RegisterViewController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1858,6 +1861,8 @@
 			children = (
 				84ECA276268C70A300A36EF3 /* LoginView.h */,
 				84ECA277268C70A300A36EF3 /* LoginView.m */,
+				84ECA279268F48D200A36EF3 /* RegisterView.h */,
+				84ECA27A268F48D200A36EF3 /* RegisterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2456,6 +2461,7 @@
 				8458651E268B6265000E7D08 /* MineController.m in Sources */,
 				845861BB268B61C7000E7D08 /* FSActionSheetCell.m in Sources */,
 				84ECA278268C70A300A36EF3 /* LoginView.m in Sources */,
+				84ECA27B268F48D200A36EF3 /* RegisterView.m in Sources */,
 				845864D8268B6238000E7D08 /* KMessageModel.m in Sources */,
 				84ECA273268C705A00A36EF3 /* KKNetConnect.m in Sources */,
 				8458652F268B6344000E7D08 /* KFileManagement.m in Sources */,

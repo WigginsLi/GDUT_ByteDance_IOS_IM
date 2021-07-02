@@ -1,24 +1,22 @@
 //
-//  LoginVIew.m
-//  IM-V2
+//  RegisterView.m
+//  KK_IM
 //
-//  Created by Admin on 2021/6/25.
+//  Created by Admin on 2021/7/2.
 //
 
-#import "LoginView.h"
+#import "RegisterView.h"
 #import "Masonry.h"
 
+@interface RegisterView () <UITextFieldDelegate>
 
-@interface LoginView () <UITextFieldDelegate>
-
-@property (nonatomic) BOOL isLogin;
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UILabel *titleLable;
 
 
 @end
 
-@implementation LoginView
+@implementation RegisterView
 
 - (instancetype)init
 {
@@ -57,8 +55,8 @@
     self.titleLable.textColor = [UIColor systemBlueColor];
 
 
-    self.titleLable.font = [UIFont systemFontOfSize:95];
-    self.titleLable.text = @"IM";
+    self.titleLable.font = [UIFont systemFontOfSize:80];
+    self.titleLable.text = @"注册";
     self.titleLable.textAlignment = NSTextAlignmentCenter;
 
     [self.titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,13 +118,13 @@
         make.height.equalTo(@55);
     }];
 
-    self.loginButton = [[UIButton alloc]init];
-    [self.loginButton setTitle:@"登陆" forState: UIControlStateNormal];
-    self.loginButton.titleLabel.font = [UIFont systemFontOfSize:27];
-    [self.loginButton setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    self.registerButton = [[UIButton alloc]init];
+    [self.registerButton setTitle:@"注册" forState: UIControlStateNormal];
+    self.registerButton.titleLabel.font = [UIFont systemFontOfSize:27];
+    [self.registerButton setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
     
-    [self.backView addSubview:self.loginButton];
-    [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.backView addSubview:self.registerButton];
+    [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.backView).offset(30);
         make.right.equalTo(self.backView).offset(-30);
         make.top.equalTo(self.passwordField.mas_bottom).offset(40);
@@ -155,6 +153,7 @@
 
 
 @end
+
 
 
 
